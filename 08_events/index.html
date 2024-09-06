@@ -19,8 +19,19 @@
    </div>
 </body>
 <script>
-  document.getElementById('owl').onclick = function(){
-    alert('you clicked on owl');
-  }
+  // use only in time of need no Propagation of events...
+  // document.getElementById('owl').onclick = function(){
+  //   alert('you clicked on owl');
+  // }
+
+  let images = document.getElementById('images').addEventListener('click', function(e){
+    console.log(`You are on main page`);
+  }, false)
+  
+  let owl = document.getElementById('owl').addEventListener('click', function(e){
+    console.log(`You are on owl page`);
+    e.stopPropagation();
+  }, false)
+
 </script>
 </html>
